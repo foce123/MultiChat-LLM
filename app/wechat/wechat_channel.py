@@ -14,8 +14,8 @@ import requests
 
 from common.context import *
 from common.reply import *
-from channel.chat_channel import ChatChannel
-from channel.wechat.wechat_message import *
+from chat_channel import ChatChannel
+from wechat_message import *
 from common.expired_dict import ExpiredDict
 from utils.log import logger
 # from common.singleton import singleton
@@ -23,7 +23,7 @@ from common.time_check import time_checker
 from config import conf, get_appdata_dir
 from lib import itchat
 from lib.itchat.content import *
-from wechat_message import WechatMessage
+from chat_message import ChatMessage
 
 
 @itchat.msg_register([TEXT, VOICE, PICTURE, NOTE])
