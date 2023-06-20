@@ -2,7 +2,7 @@ import re
 
 from common.context import ContextType
 from common.tmp_dir import TmpDir
-from common.chat_message import ChatMessage
+from chat_message import ChatMessage
 from utils.log import logger
 from lib import itchat
 from lib.itchat.content import *
