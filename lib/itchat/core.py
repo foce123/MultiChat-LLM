@@ -28,7 +28,7 @@ class Core(object):
         self.receivingRetryCount = 5
     def login(self, enableCmdQR=False, picDir=None, qrCallback=None,
             loginCallback=None, exitCallback=None):
-        ''' log in like web wechat does
+        ''' log in like web roles does
             for log in
                 - a QR code will be downloaded and opened
                 - then scanning status is logged, it paused for you confirm
@@ -103,8 +103,8 @@ class Core(object):
         '''
         raise NotImplementedError()
     def show_mobile_login(self):
-        ''' show web wechat login sign
-            the sign is on the top of mobile phone wechat
+        ''' show web roles login sign
+            the sign is on the top of mobile phone roles
             sign will be added after sometime even without calling this function
             it is defined in components/login.py
         '''
@@ -134,7 +134,7 @@ class Core(object):
     def logout(self):
         ''' logout
             if core is now alive
-                logout will tell wechat backstage to logout
+                logout will tell roles backstage to logout
             and core gets ready for another login
             it is defined in components/login.py
         '''
@@ -397,7 +397,7 @@ class Core(object):
     def auto_login(self, hotReload=False, statusStorageDir='itchat.pkl',
             enableCmdQR=False, picDir=None, qrCallback=None,
             loginCallback=None, exitCallback=None):
-        ''' log in like web wechat does
+        ''' log in like web roles does
             for log in
                 - a QR code will be downloaded and opened
                 - then scanning status is logged, it paused for you confirm

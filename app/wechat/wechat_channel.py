@@ -1,7 +1,7 @@
 # encoding:utf-8
 
 """
-wechat channel
+roles channel
 """
 
 import io

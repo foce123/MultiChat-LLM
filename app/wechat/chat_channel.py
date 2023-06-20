@@ -5,8 +5,8 @@ import time
 from asyncio import CancelledError
 from concurrent.futures import Future, ThreadPoolExecutor
 
-from bridge.context import *
-from bridge.reply import *
+from common.context import *
+from common.reply import *
 from channel.channel import Channel
 from common.dequeue import Dequeue
 from common.log import logger
@@ -14,7 +14,7 @@ from config import conf
 from plugins import *
 
 try:
-    from voice.audio_convert import any_to_wav
+    from agent.voice.audio_convert import any_to_wav
 except Exception as e:
     pass
 

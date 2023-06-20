@@ -63,9 +63,9 @@ class ChatHandler(tornado.web.RequestHandler):
         storeKey = self.get_context_key(data)
         if (global_dict.get(storeKey) is None):
             global_dict[storeKey] = []
-        global_dict[storeKey].append({"role": "user", "content": prompt})
+        global_dict[storeKey].append({"roles": "user", "content": prompt})
         global_dict[storeKey].append(
-            {"role": "assistant", "content": response})
+            {"roles": "assistant", "content": response})
 
     def clear_context(self, data):
         store_key = self.get_context_key(data)
