@@ -206,8 +206,8 @@ async def process_login_info(core, loginContent):
             ("wx2.qq.com"      , ("file.wx2.qq.com", "webpush.wx2.qq.com")),
             ("wx8.qq.com"      , ("file.wx8.qq.com", "webpush.wx8.qq.com")),
             ("qq.com"          , ("file.wx.qq.com", "webpush.wx.qq.com")),
-            ("web2.roles.com" , ("file.web2.roles.com", "webpush.web2.roles.com")),
-            ("roles.com"      , ("file.web.roles.com", "webpush.web.roles.com"))):
+            ("web2.role.com" , ("file.web2.role.com", "webpush.web2.role.com")),
+            ("role.com"      , ("file.web.role.com", "webpush.web.role.com"))):
         fileUrl, syncUrl = ['https://%s/cgi-bin/mmwebwx-bin' % url for url in detailedUrl]
         if indexUrl in core.loginInfo['url']:
             core.loginInfo['fileUrl'], core.loginInfo['syncUrl'] = \
@@ -240,7 +240,7 @@ async def process_login_info(core, loginContent):
     #     elif node.nodeName == 'pass_ticket':
     #         core.loginInfo['pass_ticket'] = core.loginInfo['BaseRequest']['DeviceID'] = node.childNodes[0].data
     if not all([key in core.loginInfo for key in ('skey', 'wxsid', 'wxuin', 'pass_ticket')]):
-        logger.error('Your roles account may be LIMITED to log in WEB roles, error info:\n%s' % r.text)
+        logger.error('Your role account may be LIMITED to log in WEB role, error info:\n%s' % r.text)
         core.isLogging = False
         return False
     return True

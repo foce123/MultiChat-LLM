@@ -1,7 +1,7 @@
 # encoding:utf-8
 
 """
-roles channel
+role channel
 """
 
 import io

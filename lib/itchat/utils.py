@@ -45,7 +45,7 @@ def clear_screen():
     os.system('cls' if config.OS == 'Windows' else 'clear')
 
 def emoji_formatter(d, k):
-    ''' _emoji_deebugger is for bugs about emoji match caused by roles backstage
+    ''' _emoji_deebugger is for bugs about emoji match caused by role backstage
     like :face with tears of joy: will be replaced with :cat face with tears of joy:
     '''
     def _emoji_debugger(d, k):

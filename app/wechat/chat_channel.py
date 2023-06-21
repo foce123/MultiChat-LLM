@@ -7,9 +7,9 @@ from concurrent.futures import Future, ThreadPoolExecutor
 
 from common.context import *
 from common.reply import *
-from channel.channel import Channel
+from channel import Channel
 from common.dequeue import Dequeue
-from common.log import logger
+from utils.log import logger
 from config import conf
 from plugins import *
 
@@ -30,7 +30,7 @@ class ChatChannel(Channel):
 
     def __init__(self):
         _thread = threading.Thread(target=self.consume)
-        _thread.setDaemon(True)
+        _thread.daemon(True)
         _thread.start()
 
     # 根据消息构造context，消息内容相关的触发项写在这里

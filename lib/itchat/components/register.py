@@ -20,7 +20,7 @@ def auto_login(self, hotReload=False, statusStorageDir='itchat.pkl',
         enableCmdQR=False, picDir=None, qrCallback=None,
         loginCallback=None, exitCallback=None):
     if not test_connect():
-        logger.info("You can't get access to internet or roles domain, so exit.")
+        logger.info("You can't get access to internet or role domain, so exit.")
         sys.exit()
     self.useHotReload = hotReload
     self.hotReloadDir = statusStorageDir
