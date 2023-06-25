@@ -1,12 +1,11 @@
-from bot.bot_factory import create_bot
+
 from common.context import Context
 from common.reply import Reply
-from common import const
 from utils.log import logger
 # from common.singleton import singleton
 from config import conf
 from translate.factory import create_translator
-from voice.factory import create_voice
+from agent.voice.factory import create_voice
 
 
 def create_bot(bot_type):
@@ -15,32 +14,28 @@ def create_bot(bot_type):
     :param bot_type: bot type code
     :return: bot instance
     """
-    if bot_type == const.BAIDU:
+    if bot_type == "baidu":
         # Baidu Unit对话接口
-        from bot.baidu.baidu_unit_bot import BaiduUnitBot
-
+        from chatbot.baidu.baidu_unit_bot import BaiduUnitBot
         return BaiduUnitBot()
 
-    elif bot_type == const.CHATGPT:
+    elif bot_type == "chatGPT":
         # ChatGPT 网页端web接口
-        from bot.chatgpt.chat_gpt_bot import ChatGPTBot
-
+        from chatbot.chatgpt.chat_gpt_bot import ChatGPTBot
         return ChatGPTBot()
 
-    elif bot_type == const.OPEN_AI:
+    elif bot_type == "openAI":
         # OpenAI 官方对话模型API
-        from bot.openai.open_ai_bot import OpenAIBot
-
+        from chatbot.openai.open_ai_bot import OpenAIBot
         return OpenAIBot()
 
-    elif bot_type == const.CHATGPTONAZURE:
+    elif bot_type == chatGPTAzure:
         # Azure chatgpt service https://azure.microsoft.com/en-in/products/cognitive-services/openai-service/
-        from bot.chatgpt.chat_gpt_bot import AzureChatGPTBot
-
+        from chatbot.chatgpt.chat_gpt_bot import AzureChatGPTBot
         return AzureChatGPTBot()
 
-    elif bot_type == const.LINKAI:
-        from bot.linkai.link_ai_bot import LinkAIBot
+    elif bot_type == "linkai":
+        from chatbot.linkai.link_ai_bot import LinkAIBot
         return LinkAIBot()
 
     raise RuntimeError
