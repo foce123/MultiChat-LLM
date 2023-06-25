@@ -140,7 +140,7 @@ def predict(input, use_web: bool = False, top_k: int = 6, history_len: int = 3, 
     if history == None:
         history = []
     if use_web:
-        from agent.bing_search import bing_search
+        from agent.search.bing_search import bing_search
         results = bing_search(input)
         result_docs = search_result2docs(results)
         web_content = "\n".join([doc.page_content for doc in result_docs])

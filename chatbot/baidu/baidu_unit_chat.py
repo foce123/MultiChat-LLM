@@ -1,8 +1,6 @@
 # encoding:utf-8
 
 import requests
-
-# from bot.bot import Bot
 from common.reply import Reply, ReplyType
 
 
