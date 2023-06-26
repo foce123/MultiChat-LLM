@@ -1,0 +1,9 @@
+{
+  "chat": "dingtalk",
+  "chatbot": false,
+  "llm": true,
+  "embedding": false,
+  "search": false,
+  "translate": false,
+  "voice": false
+}

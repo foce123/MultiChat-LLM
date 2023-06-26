@@ -1,0 +1,9 @@
+{
+  "dingtalk": {},
+  "wechat": {
+    "chat": "openAI",
+    "voice_to_text": "openai",
+    "text_to_voice": "google",
+    "translate": "baidu"
+  }
+}
