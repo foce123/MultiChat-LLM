@@ -11,6 +11,8 @@ def read_file(path) -> dict:
     try:
         with open(path, mode="r", encoding="utf-8") as f:
             data = json.load(f)
+            for i in data:
+                print(i)
         return data
     except FileNotFoundError as e:
         logger.error("[ERROR] configs file: {} not exist!!!".format(path))
