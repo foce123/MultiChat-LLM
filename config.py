@@ -8,11 +8,11 @@ chat_conf = {}
 bot_conf = {}
 
 
-def read_file(path):
+def read_file(path) -> dict:
     try:
         with open(path, mode="r", encoding="utf-8") as f:
             data = literal_eval(f)
-            return data
+        return data
     except FileNotFoundError as e:
         logger.error("[ERROR] configs file: {} not exist!!!".format(path))
 
