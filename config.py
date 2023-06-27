@@ -10,7 +10,7 @@ bot_conf = {}
 def read_file(path) -> dict:
     try:
         with open(path, mode="r", encoding="utf-8") as f:
-            data = json.loads(f)
+            data = json.load(f)
             print(type(data))
         return data
     except FileNotFoundError as e:
