@@ -11,7 +11,6 @@ def read_file(path) -> dict:
     try:
         with open(path, mode="r", encoding="utf-8") as f:
             data = json.load(f)
-            print(type(data))
         return data
     except FileNotFoundError as e:
         logger.error("[ERROR] configs file: {} not exist!!!".format(path))
@@ -19,7 +18,7 @@ def read_file(path) -> dict:
 
 def load_config():
     global chat_conf, bot_conf
-    configPath = "./config.json"
+    configPath = "config.json"
     app_configPath = "./configs/app-config.json"
     bot_configPath = "./configs/bot-config.json"
     agent_configPath = "/configs/agent-config.json"
