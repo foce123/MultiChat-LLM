@@ -1,1 +1,1 @@
-from . import ChatHandler
+from .dingtalk import ChatHandler

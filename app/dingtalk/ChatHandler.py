@@ -5,7 +5,7 @@ from utils.log import logger
 import tornado.web
 import requests
 import traceback
-from . import ModelHandler
+from app import ModelHandler
 
 ModelHandler.init_model()
 
