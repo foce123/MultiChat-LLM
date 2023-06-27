@@ -1,10 +1,9 @@
 
-from config import Config
+from config import *
 
 if __name__ == '__main__':
-    conf = Config()
-    if conf.chat_conf.name == "wechat":
+    if chat_conf.name == "wechat":
         pass
-    elif conf.chat_conf.name == "dingtalk":
+    elif chat_conf.name == "dingtalk":
         from app.dingtalk import application
         application.run()

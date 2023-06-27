@@ -46,7 +46,7 @@ class LinkAIBot(OpenAIImage):
             return Reply(ReplyType.ERROR, "请再问我一次吧")
 
         try:
-            # load config
+            # load configs
             if context.get("generate_breaked_by"):
                 logger.info(f"[LINKAI] won't set appcode because a plugin ({context['generate_breaked_by']}) affected the context")
                 app_code = None

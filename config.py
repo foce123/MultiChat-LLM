@@ -1,33 +1,36 @@
 import json
 from utils.log import logger
 import os
-import pickle
 
-class Config:
-    def __init__(self):
-        self.userdata = {}
-        self.chat_conf = {}
-        self.bot_conf = {}
+userdata = {}
+chat_conf = {}
+bot_conf = {}
 
-    def read_file(path):
-        try:
-            with open(path, mode="r", encoding="utf-8") as f:
-                data = json.loads(f)
-                return data
-        except FileNotFoundError as e:
-            logger.error("[ERROR] config file: {} not exist!!!".format(path))
 
-    def load_config(self):
-        configPath = "./config.json"
-        app_configPath = "./config/app-config.json"
-        bot_configPath = "./config/bot-config.json"
-        agent_configPath = "/config/agent-config.json"
-        config = self.read_file(configPath)
-        app_conf = self.read_file(app_configPath)
-        if config['chat'] == "wechat":
-            self.chat_conf = app_conf["wechat"]
-        elif config['chat'] == "dingtalk":
-            self.chat_conf = app_conf["dingtalk"]
+def read_file(path):
+    try:
+        with open(path, mode="r", encoding="utf-8") as f:
+            data = json.loads(f)
+            return data
+    except FileNotFoundError as e:
+        logger.error("[ERROR] configs file: {} not exist!!!".format(path))
 
-        if config["chatbot"]:
-            self.bot_conf = self.read_file(bot_configPath)
+
+def load_config():
+    global chat_conf, bot_conf
+    configPath = "./config.json"
+    app_configPath = "./configs/app-config.json"
+    bot_configPath = "./configs/bot-config.json"
+    agent_configPath = "/configs/agent-config.json"
+    config = read_file(configPath)
+    app_conf = read_file(app_configPath)
+    if config['chat'] == "wechat":
+        chat_conf = app_conf["wechat"]
+    elif config['chat'] == "dingtalk":
+        chat_conf = app_conf["dingtalk"]
+
+    if config["chatbot"]:
+        bot_conf = read_file(bot_configPath)
+
+
+load_config()
