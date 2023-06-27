@@ -1,5 +1,6 @@
 import json
 from utils.log import logger
+from ast import literal_eval
 import os
 
 userdata = {}
@@ -10,7 +11,7 @@ bot_conf = {}
 def read_file(path):
     try:
         with open(path, mode="r", encoding="utf-8") as f:
-            data = json.loads(f)
+            data = literal_eval(f)
             return data
     except FileNotFoundError as e:
         logger.error("[ERROR] configs file: {} not exist!!!".format(path))
