@@ -3,8 +3,10 @@ from config import load_config
 
 if __name__ == '__main__':
     conf = load_config("config")
+    # support "wechat" and "dingtalk" chat type.
     if conf['chat'] == "wechat":
         pass
     elif conf['chat'] == "dingtalk":
-        from app.dingtalk import application
-        application.run()
+        print("load dingtalk")
+        # from app.dingtalk import application
+        # application.run()

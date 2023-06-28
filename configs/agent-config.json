@@ -12,6 +12,8 @@
     }
   },
   "voice": {
+    "voice_to_text": "openai",
+    "text_to_voice": "google",
     "azure": {
       "api_key": "",
       "region": "",

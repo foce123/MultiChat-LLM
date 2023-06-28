@@ -3,6 +3,7 @@ from common.context import Context
 from common.reply import Reply
 from utils.log import logger
 from config import conf
+from config import load_config
 
 
 def create_bot(bot_type):
@@ -45,13 +46,15 @@ class Bridge(object):
             "text_to_voice": conf().get("text_to_voice", "google"),
             "translate": conf().get("translate", "baidu"),
         }
+        if load_config("config")['voice']:
+            voice_conf = load_config("agent_config")['voice']
         model_type = conf().get("model")
         if model_type in ["text-davinci-003"]:
             self.btype["chat"] = "openAI"
-        if conf().get("use_azure_chatgpt", False):
-            self.btype["chat"] = "chatGPTAzure"
-        if conf().get("use_linkai") and conf().get("linkai_api_key"):
-            self.btype["chat"] = "linkai"
+        # if conf().get("use_azure_chatgpt", False):
+        #     self.btype["chat"] = "chatGPTAzure"
+        # if conf().get("use_linkai") and conf().get("linkai_api_key"):
+        #     self.btype["chat"] = "linkai"
         self.bots = {}
 
     def get_bot(self, typename):

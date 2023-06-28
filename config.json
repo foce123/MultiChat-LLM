@@ -1,5 +1,5 @@
 {
-  "chat": "dingtalk",
+  "chat": "wechat",
   "chatbot": false,
   "llm": true,
   "embedding": false,
