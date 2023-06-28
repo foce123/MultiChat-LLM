@@ -6,6 +6,5 @@ if __name__ == '__main__':
     if conf['chat'] == "wechat":
         pass
     elif conf['chat'] == "dingtalk":
-        print("dingtalk")
-        # from app.dingtalk import application
-        # application.run()
+        from app.dingtalk import application
+        application.run()
