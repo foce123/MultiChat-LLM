@@ -25,7 +25,7 @@ def load_config(conf_name):
     configPath = "config.json"
     app_configPath = "./configs/app-config.json"
     bot_configPath = "./configs/bot-config.json"
-    agent_configPath = "/configs/agent-config.json"
+    agent_configPath = "./configs/agent-config.json"
     if os.path.exists(pkl_path):
         with open(pkl_path, "rb") as f:
             datas = pickle.load(f)
