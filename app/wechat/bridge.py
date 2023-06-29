@@ -43,12 +43,10 @@ class Bridge(object):
             "chat": "openAI"
         }
         if load_config("config")['voice']:
-            voice_conf = load_config("agent_config")['voice']
-            self.btype["voice_to_text"] = voice_conf["voice_to_text"]
-            self.btype["text_to_voice"] = voice_conf["text_to_voice"]
+            self.btype["voice_to_text"] = load_config("config")['voice2text']
+            self.btype["text_to_voice"] = load_config("config")["text2voice"]
         if load_config("config")['translate']:
-            translate_conf = load_config("agent_config")['translate']
-            self.btype["translate"] = translate_conf["cn_to_en"]
+            self.btype["translate"] = load_config("config")['translate_vender']
         if load_config("config")["chatbot"]:
             bot_name = load_config("config")["chatbot_vender"]
             bot_conf = load_config("bot_config")[bot_name]
