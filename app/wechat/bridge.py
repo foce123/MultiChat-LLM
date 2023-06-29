@@ -2,7 +2,6 @@
 from common.context import Context
 from common.reply import Reply
 from utils.log import logger
-from config import conf
 from config import load_config
 
 
@@ -41,20 +40,21 @@ def create_bot(bot_type):
 class Bridge(object):
     def __init__(self):
         self.btype = {
-            "chat": "openAI",
-            "voice_to_text": conf().get("voice_to_text", "openai"),
-            "text_to_voice": conf().get("text_to_voice", "google"),
-            "translate": conf().get("translate", "baidu"),
+            "chat": "openAI"
         }
         if load_config("config")['voice']:
             voice_conf = load_config("agent_config")['voice']
-        model_type = conf().get("model")
-        if model_type in ["text-davinci-003"]:
-            self.btype["chat"] = "openAI"
-        # if conf().get("use_azure_chatgpt", False):
-        #     self.btype["chat"] = "chatGPTAzure"
-        # if conf().get("use_linkai") and conf().get("linkai_api_key"):
-        #     self.btype["chat"] = "linkai"
+            self.btype["voice_to_text"] = voice_conf["voice_to_text"]
+            self.btype["text_to_voice"] = voice_conf["text_to_voice"]
+        if load_config("config")['translate']:
+            translate_conf = load_config("agent_config")['translate']
+            self.btype["translate"] = translate_conf["cn_to_en"]
+        if load_config("config")["chatbot"]:
+            bot_name = load_config("config")["chatbot_vender"]
+            bot_conf = load_config("bot_config")[bot_name]
+            self.btype["model"] = bot_conf["model"]
+        # if model_type in ["text-davinci-003"]:
+        #     self.btype["chat"] = "openAI"
         self.bots = {}
 
     def get_bot(self, typename):

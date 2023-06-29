@@ -48,14 +48,5 @@ def load_config(conf_name):
         logger.error("[ERROR] config file not exist!!!")
         os.error("config file not exist!!!")
 
-    # app_conf = read_file(app_configPath)
-    #
-    # if config['chat'] == "wechat":
-    #     chat_conf = app_conf["wechat"]
-    # elif config['chat'] == "dingtalk":
-    #     chat_conf = app_conf["dingtalk"]
-    #
-    # if config["chatbot"]:
-    #     bot_conf = read_file(bot_configPath)
 
 

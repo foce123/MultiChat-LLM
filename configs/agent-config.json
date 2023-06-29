@@ -6,14 +6,13 @@
     }
   },
   "translate": {
+    "cn_to_en": "baidu",
     "baidu": {
       "app_id": "",
       "app_key": ""
     }
   },
   "voice": {
-    "voice_to_text": "openai",
-    "text_to_voice": "google",
     "azure": {
       "api_key": "",
       "region": "",

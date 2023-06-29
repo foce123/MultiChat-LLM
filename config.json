@@ -1,9 +1,16 @@
 {
   "chat": "dingtalk",
   "chatbot": false,
-  "llm": true,
+  "chatbot_vender": "openai",
+  "llm": false,
+  "llm_name": "THUDM/ChatGLM-6B",
   "embedding": false,
+  "embedding_model": "",
   "search": false,
+  "search_vender": "",
   "translate": false,
-  "voice": false
+  "translate_vender": "",
+  "voice": false,
+  "voice2text": "openai",
+  "text2voice": "google"
 }
