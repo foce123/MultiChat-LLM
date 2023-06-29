@@ -7,7 +7,7 @@ from concurrent.futures import Future, ThreadPoolExecutor
 
 from common.context import *
 from common.reply import *
-from channel import Channel
+from app.wechat.channel import Channel
 from common.dequeue import Dequeue
 from utils.log import logger
 from config import conf

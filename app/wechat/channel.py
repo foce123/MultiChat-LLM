@@ -2,7 +2,7 @@
 Message sending channel abstract class
 """
 
-from bridge import Bridge
+from app.wechat.bridge import Bridge
 from common.context import Context
 from common.reply import *
 
