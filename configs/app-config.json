@@ -1,10 +1,8 @@
 {
   "dingtalk": {
-    "name": "dingtalk",
     "port": 8080
   },
   "wechat": {
-    "name": "wechat",
     "chat": "openAI",
     "voice_to_text": "openai",
     "text_to_voice": "google"

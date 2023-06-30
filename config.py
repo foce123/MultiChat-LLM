@@ -8,6 +8,35 @@ chat_conf = {}
 bot_conf = {}
 
 
+class Config:
+    def __init__(self):
+        self.user_datas = {}
+
+    def get_user_data(self, user) -> dict:
+        if self.user_datas.get(user) is None:
+            self.user_datas[user] = {}
+        return self.user_datas[user]
+
+    def load_user_datas(self):
+        try:
+            with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "user_datas.pkl"), "rb") as f:
+                self.user_datas = pickle.load(f)
+                logger.info("[Config] User datas loaded.")
+        except FileNotFoundError as e:
+            logger.info("[Config] User datas file not found, ignore.")
+        except Exception as e:
+            logger.info("[Config] User datas error: {}".format(e))
+            self.user_datas = {}
+
+    def save_user_datas(self):
+        try:
+            with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "user_datas.pkl"), "wb") as f:
+                pickle.dump(self.user_datas, f)
+                logger.info("[Config] User datas saved.")
+        except Exception as e:
+            logger.info("[Config] User datas error: {}".format(e))
+
+
 def read_file(path) -> dict:
     try:
         with open(path, mode="r", encoding="utf-8") as f:

@@ -10,7 +10,7 @@ from common.reply import *
 from app.wechat.channel import Channel
 from common.dequeue import Dequeue
 from utils.log import logger
-from config import conf
+# from config import conf
 from plugins import *
 
 try:
